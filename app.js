@@ -26,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
 	Todo.find()
+		.sort({ name: 'asc' })
 		.lean()
 		.then(todos => res.render('index', { todos }))
 		.catch(error => {
