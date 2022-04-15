@@ -6,7 +6,7 @@ const routes = require('./routes');
 // connect mongoDB
 require('./config/mongoose');
 
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: 'hbs' }));
@@ -17,6 +17,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(routes);
 
-app.listen(port, () => {
-	console.log(`Server is listening on http://localhost:${port}`);
+app.listen(PORT, () => {
+	console.log(`Server is listening on http://localhost:${PORT}`);
 });
