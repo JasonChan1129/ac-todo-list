@@ -2,6 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const usePassport = require('./config/passport');
 
 const routes = require('./routes');
 // connect mongoDB
@@ -24,6 +25,7 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(routes);
+usePassport(app);
 
 app.listen(PORT, () => {
 	console.log(`Server is listening on http://localhost:${PORT}`);
