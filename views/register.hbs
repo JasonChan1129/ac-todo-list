@@ -2,7 +2,7 @@
 	<div class='col-md-6 m-auto'>
 		<div class='card px-3'>
 			<h1 class='text-center mt-5 mb-3'>Register</h1>
-			<form action='users/register' method='post'>
+			<form action='/users/register' method='post'>
 				<div class='form-group mb-3'>
 					<label for='username' class='form-label'>Username</label>
 					<input
@@ -11,6 +11,7 @@
 						class='form-control'
 						id='username'
 						placeholder='Enter your username...'
+						value='{{username}}'
 					/>
 				</div>
 				<div class='form-group mb-3'>
@@ -21,6 +22,7 @@
 						class='form-control'
 						id='email'
 						placeholder='Enter your email...'
+						value='{{email}}'
 					/>
 				</div>
 				<div class='form-group mb-3'>
@@ -31,6 +33,7 @@
 						class='form-control'
 						id='password'
 						placeholder='Enter your password...'
+						value='{{password}}'
 					/>
 				</div>
 				<div class='form-group mb-3'>
@@ -41,6 +44,7 @@
 						class='form-control'
 						id='confirmPassword'
 						placeholder='Enter your password again...'
+						value='{{confirmPassword}}'
 					/>
 				</div>
 				<button type='submit' class='btn btn-primary w-100'>Register</button>
