@@ -4,9 +4,11 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 module.exports = app => {
+	// middleware
 	app.use(passport.initialize());
 	app.use(passport.session());
 
+	// verification
 	passport.use(
 		new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
 			User.findOne({ email })
@@ -23,6 +25,7 @@ module.exports = app => {
 		})
 	);
 
+	// in order to have session works properly
 	passport.serializeUser((user, done) => {
 		done(null, user.id);
 	});
