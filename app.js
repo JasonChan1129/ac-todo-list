@@ -24,8 +24,8 @@ app.use(
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use(routes);
 usePassport(app);
+app.use(routes);
 
 app.listen(PORT, () => {
 	console.log(`Server is listening on http://localhost:${PORT}`);
